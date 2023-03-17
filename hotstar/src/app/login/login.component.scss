@@ -1,0 +1,163 @@
+@keyframes animate {
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background: #04051b;
+    overflow: hidden;
+}
+.background li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    // border: solid aqua 1px;
+    // box-shadow: 0 4px 8px 0 rgba(93, 194, 238, 0.541), 0 6px 20px 0 rgba(40, 188, 229, 0.531);
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 19s linear infinite;
+}
+
+
+
+
+.background li:nth-child(0) {
+    left: 52%;
+    width: 179px;
+    height: 179px;
+    bottom: -179px;
+    animation-delay: 1s;
+}
+.background li:nth-child(1) {
+    left: 53%;
+    width: 101px;
+    height: 101px;
+    bottom: -101px;
+    animation-delay: 4s;
+}
+.background li:nth-child(2) {
+    left: 9%;
+    width: 127px;
+    height: 127px;
+    bottom: -127px;
+    animation-delay: 3s;
+}
+.background li:nth-child(3) {
+    left: 40%;
+    width: 150px;
+    height: 150px;
+    bottom: -150px;
+    animation-delay: 13s;
+}
+.background li:nth-child(4) {
+    left: 1%;
+    width: 118px;
+    height: 118px;
+    bottom: -118px;
+    animation-delay: 10s;
+}
+.background li:nth-child(5) {
+    left: 69%;
+    width: 199px;
+    height: 199px;
+    bottom: -199px;
+    animation-delay: 19s;
+}
+.background li:nth-child(6) {
+    left: 35%;
+    width: 141px;
+    height: 141px;
+    bottom: -141px;
+    animation-delay: 1s;
+}
+.background li:nth-child(7) {
+    left: 56%;
+    width: 137px;
+    height: 137px;
+    bottom: -137px;
+    animation-delay: 11s;
+}
+.background li:nth-child(8) {
+    left: 74%;
+    width: 168px;
+    height: 168px;
+    bottom: -168px;
+    animation-delay: 36s;
+}
+.background li:nth-child(9) {
+    left: 72%;
+    width: 124px;
+    height: 124px;
+    bottom: -124px;
+    animation-delay: 27s;
+}
+// -- card -----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.card{
+
+    background-color: #1218624c;
+    color: azure   ;
+    // text-align: center;
+    box-shadow: aqua;
+    font-family: "Roboto";
+    padding: 5%;
+    font-size: small;
+    border: solid aqua 1px;
+    box-shadow: 0 4px 8px 0 rgba(93, 194, 238, 0.541), 0 6px 20px 0 rgba(40, 188, 229, 0.531);
+}
+hr{
+    color: rgb(2, 255, 255);
+    background-color: aqua;
+
+}
+.textBox{
+    background-color: transparent;
+    color:aqua;
+    border-color: aqua;
+    // padding: 2%;
+    margin: 2%;
+    font-size: small;
+}
+label{
+    text-align: left;
+    padding: 1%;
+}
+.loginTitle{
+    text-align: center;
+    // padding: 5px;
+    // padding-top: 10px;  
+
+}
+button{
+    
+    margin: 2%;
+    background-color: transparent;
+    border: solid 1px aqua;
+    font-size: small;
+
+}
+button:hover
+{
+    background-color: aqua;
+    color: rgb(6, 4, 17);
+}
+a {
+    text-decoration: none;
+    color: aqua;
+}

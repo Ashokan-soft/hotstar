@@ -12,6 +12,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { IntlTelInputNgModule } from 'intl-tel-input-ng';
+import { BetaversionComponent } from './betaversion/betaversion.component';
+
 
 @NgModule({
   declarations: [
@@ -19,16 +22,18 @@ import { RegisterComponent } from './register/register.component';
     HomeComponent,
     NavbarComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    BetaversionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
-    ReactiveFormsModule,
     FormsModule,
-    
+    ReactiveFormsModule,
+
+    IntlTelInputNgModule.forRoot(),
 
     
   ],

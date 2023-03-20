@@ -131,7 +131,8 @@ hr{
     color:aqua;
     border-color: aqua;
     // padding: 2%;
-    margin: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
     font-size: small;
 }
 label{
@@ -147,8 +148,9 @@ label{
 button{
     
     margin: 2%;
-    background-color: transparent;
+    // background-color: transparent;
     border: solid 1px aqua;
+    color: aqua;
     font-size: small;
 
 }
@@ -156,8 +158,18 @@ button:hover
 {
     background-color: aqua;
     color: rgb(6, 4, 17);
+    // font-size: medium;
 }
 a {
     text-decoration: none;
     color: aqua;
+}
+// --------------------validation-------------------------------------
+.is-invalid{
+    border-color:red;
+    box-shadow: 0 4px 8px 0 rgba(235, 12, 12, 0.291), 0 6px 20px 0 rgba(235, 6, 6, 0.452);
+
+}
+.smallText{
+    color: #b4ff06;
 }

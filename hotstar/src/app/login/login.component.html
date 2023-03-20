@@ -1,8 +1,8 @@
 <br>
 <ul class="background">
+    <li><img src="/assets/images/gif/scr.gif" alt=""></li>
     <li></li>
-    <li></li>
-    <li></li>
+    <li><img src="/hotstar/src/assets/images/" alt=""></li>
     <li></li>
     <li></li>
     <li></li>
@@ -33,7 +33,12 @@
                     <label for="">UserName</label>
                    
                     <br>
-                    <input type="text" formControlName="username" email="true" placeholder="Enter Email" class="form-control textBox">
+                    <input type="email" formControlName="username" email="true" placeholder="Enter Email" class="form-control textBox"
+                    [ngClass]="{'is-invalid': submitted && loginForm.controls['username'].errors}">
+
+                    <small class="smallText" *ngIf="submitted && loginForm.controls['username'].errors?.required">Fill Your registerd Email</small>
+                    <small class="smallText" *ngIf="loginForm.controls['username'].touched && loginForm.controls['username'].errors?.email">Enter valid User Email</small>
+              
 
                     <br>
             
@@ -41,7 +46,14 @@
                     <br>    
                     
                  
-                    <input type="password" formControlName="password"  placeholder="EnterPassword" class="form-control textBox">
+                    <input type="password" formControlName="password"  placeholder="EnterPassword" class="form-control textBox"
+                    [ngClass]="{'is-invalid':submitted && loginForm.controls['password']}" >
+
+                    <small class="smallText" *ngIf="submitted && loginForm.controls['password'].errors?.required">Fill your password</small>
+
+                    <small class="smallText" *ngIf="loginForm.controls['username'].touched && loginForm.controls['password'].errors?.minlength">Password must be 6 character</small>
+                    
+
                     <br>
                     <div>
 
@@ -52,10 +64,11 @@
                     <br>
                     <div class="text-center button">
 
-                        <button class="btn btn-success" type="submit">Login</button>
-                        <button class="btn btn-primary">Create Account</button>
+                        <button class="btn" type="submit" (click)="submit()">Login</button>
+                        <button class="btn">Create Account</button>
 
                     </div>
+                    
                     
                 </form>
 

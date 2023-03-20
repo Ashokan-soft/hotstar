@@ -1,1 +1,32 @@
+ <form #f="ngForm">
+    <div class="wrapper">
 
+        <intl-tel-input
+
+        maxlength="10"
+
+
+        [label]="'Please enter your phone number'"
+        [name]="'my-name'"
+        [cssClass]="'form-control'"
+        [labelCssClass]="'col-sm-2 col-form-label'"
+        [required]="true"
+        [options]="{
+            preferredCountries: ['IN'],
+          
+            onlyCountries: ['fr', 'ch','in', 'uk']
+        }"
+        [onlyLocalized]="true"
+
+        formControlName="phone" (keypress)="keyPressNumbers($event)"></intl-tel-input>
+
+
+    </div>
+
+    <div class="wrapper">
+      <button (click)="f.reset()">Reset</button>
+    </div>
+
+    <input type="text" (keypress)="keyPressNumbers($event)"        maxlength="10">
+
+  </form>

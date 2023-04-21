@@ -1,4 +1,4 @@
- <form #f="ngForm">
+ <!-- <form #f="ngForm">
     <div class="wrapper">
 
         <intl-tel-input
@@ -29,4 +29,192 @@
 
     <input type="text" (keypress)="keyPressNumbers($event)"        maxlength="10">
 
-  </form>
+  </form> -->
+
+
+
+
+
+
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+
+
+
+
+<br>
+
+<div class="container overallContainer">
+    <div class="row">
+        <!-- <div class="col"></div> -->
+        <div class="col"> <img src="/assets/images/images/dislogo.png" alt=""></div>
+        <div class="col">
+            <form action="">
+                <br>
+
+<div class="container formconatiner">
+    
+ <h3>Register your Account</h3>
+    
+    <form action="" [formGroup]="rform" class="form">
+        <div class="inside-form">
+            <!-- row 1--------------------------------------------------------------- -->
+            <div class="row">
+                <div class="col">
+                    <label for="">
+                        <h6>First Name</h6>
+                    </label>
+                    <input type="text"  class="form-control textBox" formControlName="fname"
+                        [ngClass]="{'is-invalid':submitted && rform.controls['fname'].errors}" placeholder="Enter Name">
+
+                    <small class="smallText" *ngIf="submitted && rform.controls['fname'].errors?.required">First Name
+                        Required </small>
+<!-- you want to use this restistion less code just Go To tsconfig.json 
+in that nopropertyAccessFromIndexSing you want make false -->
+                    <small class="smallText"
+                        *ngIf="rform.controls['fname'].errors?.minlength">Minmum
+                        length is 3</small>
+
+
+                </div>
+                <div class="col">
+                    <label for="">
+                        <h6>Last Name</h6>
+                    </label>
+                    <input type="text" class="form-control  textBox" formControlName="lname" placeholder="Enter last name">
+
+                </div>
+            </div>
+            <!--row 2 --------------------------------------------------------------- -->
+            <div class="row">
+                <div class="col">
+                    <label for="">
+                        <h6>Address</h6>
+                    </label>
+                    <textarea type="text" class="form-control  textBox" formControlName="address" placeholder="Enter your Address"
+                        [ngClass]="{'is-invalid':submitted && rform.controls['address'].errors}"></textarea>
+                    <small class="smallText" *ngIf="submitted && rform.controls['address'].errors?.minlength"> plese
+                        provide your proper address</small>
+                    <small class="smallText" *ngIf="submitted && rform.controls['address'].errors?.required">Enter
+                        Your Address</small>
+
+
+
+
+                </div>
+
+            </div>
+            <!-- row 3 ------------------------------------------------------------- -->
+            <div class="row">
+                <div class="col">
+                    <h6>Gender</h6>
+
+                    <div *ngFor="let y of Gender">
+
+                        <label>
+                            <input type="radio" class="form-check-input  textBox" name="gender" value="{{y}}"  formControlName="gender"
+                                (change)="gchenge($event)" />
+                            {{ y }}
+                        </label>
+
+                    </div>
+
+                    <small class="smallText" *ngIf="submitted && rform.controls['gender'].errors?.required"> Select
+                        any one</small>
+
+                </div>
+                <div class="col">
+
+                 
+
+                </div>
+            </div>
+
+            <!-- row 4---------------------------------------------------------------------- -->
+            
+            <!-- row 5------------------------------------------------------------------------ -->
+
+            <div class="row">
+                <div class="col">
+                    <label for="">Email</label>
+                    <input type="email" formControlName="Email" class="form-control  textBox" email="true"
+                        [ngClass]="{'is-invalid':  submitted && rform.controls['Email'].errors}" placeholder="Enter Email">
+
+                    <small class="smallText" *ngIf="submitted && rform.controls['Email'].errors?.required">Plese
+                        provide your email </small>&nbsp;
+                    <small class="smallText"
+                        *ngIf="rform.controls['Email'].errors && rform.controls['Email'].touched">Enter valid
+                        mail</small>
+
+
+                </div>
+                <div class="col">
+                    <label for="">Phone</label>
+
+                    
+                    <input type="text" maxlength="10" class="form-control textBox" formControlName="phoneNum"
+                        (keypress)="keyPressNumbers($event)"
+                        [ngClass]="{'is-invalid':submitted && rform.controls['phoneNum'].errors}" placeholder="Enter PhoneNumber">
+
+
+                    <small class="smallText" *ngIf="rform.controls['phoneNum'].errors?.pattern ||
+                      rform.controls['phoneNum'].errors?.minlength || rform.controls['phoneNum'].errors?.maxlength">
+                        10 Digit Must
+                    </small>
+
+
+                    <small class="smallText" *ngIf="rform.controls['phoneNum'].errors?.required && submitted">
+                        Enter Mobile Number
+                    </small>
+
+                </div>
+
+            </div>
+            <!-- pasword row--------------------------------------------------------------------------------------------- -->
+
+            <div class="row">
+                <div class="col">
+                    <label >Password</label>
+                    <input class ="form-control textBox" type="password" formControlName="Password"
+                     [ngClass]="{'is-invalid':submitted && rform.controls['Password'].errors?.required}" placeholder="Enter Here">
+
+
+                    <small class="smallText" *ngIf=" submitted && rform.controls['Password'].invalid" >Enter Password</small>&nbsp;
+                    <small class="smallText" *ngIf=" submitted && rform.controls['Password'].errors?.minlength" >Minimum 6 values</small>
+                    
+                </div>
+                <div class="col">
+                    <label>ConfrimPassword</label>
+                    <input type="password"class ="form-control textBox" formControlName="CPassword" placeholder="Confrim Password">
+
+                    <small  class="smallText" *ngIf="rform.controls['CPassword'].value != rform.controls['Password'].value">Password Not Match</small>
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+            <!-- submit button row------------------------------------------------------- --> <pre></pre>
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn button" (click)="sub()">Submit</button>
+
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+</div>
+            </form>
+        </div>
+
+        <!-- <div class="col"></div> -->
+    </div>
+
+</div>

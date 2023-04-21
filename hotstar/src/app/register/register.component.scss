@@ -1,0 +1,49 @@
+.container{
+    background-color: rgba(97, 99, 125, 0.256);
+    padding: 8%;
+    border-radius: 12px;
+}
+form{
+    color: rgba(210, 211, 212, 0.913);
+}
+.textBox{
+    background-color: transparent;
+    color:aqua;
+    border-color: aqua;
+    // padding: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: small;
+}
+.is-invalid{
+    border-color:red;
+    box-shadow: 0 4px 8px 0 rgba(235, 12, 12, 0.291), 0 6px 20px 0 rgba(235, 6, 6, 0.452);
+
+}
+.smallText{
+    color: #b4ff06;
+}
+.btn{
+    
+    margin: 2%;
+    // background-color: transparent;
+    border: solid 1px aqua;
+    color: aqua;
+    font-size: small;
+
+}
+.btn:hover
+{
+    background-color: aqua;
+    color: rgb(6, 4, 17);
+    // font-size: medium;
+}
+.inside-form{
+    // background-color: #b4ff06;
+}
+.formconatiner{
+    background-color: #0a0524db;
+}
+.overallContainer{
+    font-size: small;
+}

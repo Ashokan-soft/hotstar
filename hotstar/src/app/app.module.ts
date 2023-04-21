@@ -14,7 +14,7 @@ import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { IntlTelInputNgModule } from 'intl-tel-input-ng';
 import { BetaversionComponent } from './betaversion/betaversion.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,8 +32,9 @@ import { BetaversionComponent } from './betaversion/betaversion.component';
     MatSlideToggleModule,
     FormsModule,
     ReactiveFormsModule,
-
     IntlTelInputNgModule.forRoot(),
+    HttpClientModule,
+
 
     
   ],

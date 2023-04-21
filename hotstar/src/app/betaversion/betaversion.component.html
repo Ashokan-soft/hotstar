@@ -1,1 +1,94 @@
-<p>betaversion works!</p>
+<br>
+<br>
+<div class="container">
+
+    <div class="card">
+        <div class="card-body">
+            <form [formGroup]="videoForm">
+
+                <div class="row"> 
+                    <div class="col">
+                        <label for=""> Title</label>
+                        <input type="text" class=" form-control" formControlName="Title">
+                    </div>
+                    <div class="col">
+
+                        <label for=""> Description</label>
+                        <input type="text" class=" form-control" formControlName="Desc">
+
+                    </div>
+                    <div class="col">
+                        <label for=""> Video URL</label>
+                        <input type="text" class=" form-control" formControlName="videoUrl">
+                    </div>
+                </div> <!--row end -->
+
+                <div class="row"> 
+                    <div class="col">
+                        <label for=""> Language</label>
+                    
+                        <select name="" id="" class="form-select" (change)="LanguageSelect($event)" formControlName="videoLanguage">
+                            <option [value]="x" *ngFor="let x of languageList" >{{x}}</option>
+                            <option value="">select any one</option>
+                            
+                        </select>
+
+                    </div>
+                    <div class="col">
+
+                        <label for=""> Category</label>
+                            
+                        <select name="" id="" class="form-select" (change)="CategorySelect($event)" formControlName="VideoCatogry">
+                            <option [value]="x" *ngFor="let x of categoryList" >{{x}}</option>
+                            <option value="">select any one</option>
+                            
+                        </select>
+
+                    </div>
+                    <div class="col">
+                        <label for=""> Banner URL</label>
+                        <input type="text" class=" form-control" formControlName="BannerURL">
+                    </div>
+                </div> <!--row end -->
+
+                <div class="row"> 
+                    <div class="col">
+                        <label for=""> Release date</label>
+                        <input type="date" formControlName="ReleaseDate" class="form-control">
+
+                    </div>
+                    <div class="col">
+
+                        <label for=""> Duration</label>
+                            
+                       <input type="text" formControlName="Duration" class="form-control"> 
+
+                    </div>
+             
+                </div> <!--row end -->
+<br>
+                <div class="row">
+                    <div class="col text-center" >
+                        <button type="submit" class="btn btn-primary" (click)="submit()"> Save</button>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
+
+<!-- testing--------------- -->
+<br>
+<div class="text-center">
+
+    <Button class="btn btn-primary" (click)="ApiCheck()">Get Local API Data</Button>
+    
+</div>

@@ -3,7 +3,7 @@ import { ScriptCheckService } from '../services/script-check.service';
 
 
 
-const SCRIPT_PATH = '/assets/navbar.js';
+const SCRIPT_PATH = '/assets/scripts/navbar.js';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +12,8 @@ const SCRIPT_PATH = '/assets/navbar.js';
 })
 export class NavbarComponent implements OnInit {
 
-    
+  
+
   constructor(
     private renderer: Renderer2,
     private scriptService: ScriptCheckService,

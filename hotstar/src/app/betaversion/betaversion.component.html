@@ -1,5 +1,7 @@
 <br>
+
 <br>
+
 <div class="container">
 
     <div class="card">
@@ -9,16 +11,22 @@
                 <div class="row"> 
                     <div class="col">
                         <label for=""> Title</label>
-                        <input type="text" class=" form-control" formControlName="Title">
+                        <input type="text" class=" form-control" formControlName="Title"
+                        [ngClass]="{'is-invalid':submitted && videoForm.controls['Title'].errors}" placeholder="Enter Name" >
+
+                          <small class="smallText" *ngIf="submitted && videoForm.controls['Title'].errors?.required">Enter Title</small>
+                    
                     </div>
                     <div class="col">
 
                         <label for=""> Description</label>
-                        <input type="text" class=" form-control" formControlName="Desc">
+                        <input type="text" class=" form-control" formControlName="Desc" [ngClass]="{'is-invalid':submitted && videoForm.controls['Desc'].errors}">
 
                     </div>
                     <div class="col">
                         <label for=""> Video URL</label>
+
+                
                         <input type="text" class=" form-control" formControlName="videoUrl">
                     </div>
                 </div> <!--row end -->
@@ -27,9 +35,15 @@
                     <div class="col">
                         <label for=""> Language</label>
                     
-                        <select name="" id="" class="form-select" (change)="LanguageSelect($event)" formControlName="videoLanguage">
-                            <option [value]="x" *ngFor="let x of languageList" >{{x}}</option>
+                        <!-- <select name="" id="" class="form-select" (change)="LanguageSelect($event)" formControlName="videoLanguage">
+                            <option [value]="x" *ngFor="let x,y of languageList id_d"  >{{x}}</option>
                             <option value="">select any one</option>
+                            
+                        </select> -->
+                        <select name="" id="" class="form-select" (change)="LanguageSelect($event)" formControlName="videoLanguage">
+                            <option value="">select any one</option>
+                            <option [value]="x.languageId" *ngFor="let x of languageList"  >{{x.language}}</option>
+                     
                             
                         </select>
 
@@ -39,8 +53,10 @@
                         <label for=""> Category</label>
                             
                         <select name="" id="" class="form-select" (change)="CategorySelect($event)" formControlName="VideoCatogry">
-                            <option [value]="x" *ngFor="let x of categoryList" >{{x}}</option>
+
+
                             <option value="">select any one</option>
+                            <option [value]="x.categoryId" *ngFor="let x of categoryList" >{{x.categoryName}}</option>
                             
                         </select>
 

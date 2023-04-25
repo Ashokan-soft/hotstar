@@ -15,6 +15,7 @@ import { RegisterComponent } from './register/register.component';
 import { IntlTelInputNgModule } from 'intl-tel-input-ng';
 import { BetaversionComponent } from './betaversion/betaversion.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    BetaversionComponent
+    BetaversionComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

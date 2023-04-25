@@ -10,7 +10,7 @@ export class ApiWorksService {
   
   public ApiCheck(input:any){
 
-    let url="https://localhost:44325/AshokApiTest/Getting"
+    let url="https://localhost:44310/Video/InsertVideo"
    
     return this.http.post(url,input)
 

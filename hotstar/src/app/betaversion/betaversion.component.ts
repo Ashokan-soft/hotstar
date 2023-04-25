@@ -13,9 +13,32 @@ const SCRIPT_PATH = '/assets/scripts/betascript.js';
 })
 
 export class BetaversionComponent implements OnInit {
+      
+  ApiTestData:any
+  submitted:boolean=false
 
-  languageList:any=["Tamil","English","kannada","Hindi"]
-  categoryList:any=["Action","Horror","Funny","Crime:","Love","Historical","Thriller","Drama","Romance",]
+  languageList:any=
+  [
+    {languageId:1,language:"Tamil"},
+    {languageId:2,language:"English"},
+    {languageId:3,language:"Kannada"},
+    {languageId:4,language:"Telugu"},
+    {languageId:5,language:"Malayalam"},
+    {languageId:6,language:"Hindi"},
+
+  ]
+ 
+  categoryList:any=
+  [
+    {categoryId:1,categoryName:"Action",},
+    {categoryId:2,categoryName:"Horror",},
+    {categoryId:3,categoryName:"Funny",},
+    {categoryId:4,categoryName:"Crime",},
+    {categoryId:5,categoryName:"Historical",},
+    {categoryId:6,categoryName:"Thriller",},
+    {categoryId:7,categoryName:"Drama",},
+    {categoryId:8,categoryName:"Romance",},
+ ]
 
 
   videoForm:FormGroup=new FormGroup({
@@ -40,6 +63,7 @@ export class BetaversionComponent implements OnInit {
   }
 
   LanguageSelect(x:any){
+    // alert(JSON.stringify(x))
     if(x.target.value){
       this.videoForm.controls["videoLanguage"].setValue(x.target.value);
       console.log(JSON.stringify(this.videoForm.controls["videoLanguage"].value))
@@ -58,13 +82,11 @@ export class BetaversionComponent implements OnInit {
       else{
         console.log("Catogry NOT selected")
       }
-  }
-
-
-// --------------\\\
-
-ApiTestData:any
-submitted:boolean=false
+    }
+    
+    
+    // --------------\\\
+    
 
 ApiCheck(){
   
@@ -72,20 +94,24 @@ let input  = {
   "videoTitle":this.videoForm.controls['Title'].value,
   "videoDescription":this.videoForm.controls['Desc'].value,
   "videoLanguage":this.videoForm.controls['videoLanguage'].value,
-  "VideoCatogry":this.videoForm.controls['VideoCatogry'].value,
+  "videovideoCatogry":this.videoForm.controls['VideoCatogry'].value,
   "videoUrl":this.videoForm.controls['videoUrl'].value,
   "bannerUrl":this.videoForm.controls['BannerURL'].value,
-  "ReleaseDate":this.videoForm.controls['ReleaseDate'].value,
-  "Duration":this.videoForm.controls['Duration'].value,
+  "releaseDate":this.videoForm.controls['ReleaseDate'].value,
+  "duration":this.videoForm.controls['Duration'].value,
 }
-alert(this.videoForm.controls['Title'].value)
+// alert(this.videoForm.controls['Title'].value)
 alert(JSON.stringify(input))
   this.service.ApiCheck(input).subscribe((data:any)=>{
-    alert(data)
-     alert("DataGet")
-  this.ApiTestData=data.videos;
-
-  alert(JSON.stringify(this.ApiTestData))
+   if(data.success)
+   {
+alert("inserted successfully")
+this.videoForm.reset();
+   }
+   else
+   {
+    alert("not inserted");
+   }
 
   })
 
@@ -97,13 +123,17 @@ alert(JSON.stringify(input))
 
 //     this.ApiCheck()
 
-// }
-submit(){
+// }\
 
-  
+
+
+submit(): void{
+
+this.submitted=true
   if(this.videoForm.valid){
-
-    alert(JSON.stringify(this.videoForm.value))
+  
+this.ApiCheck()
+    // alert(JSON.stringify(this.videoForm.value))
   }
   else(
     alert("some fields are empty......")
